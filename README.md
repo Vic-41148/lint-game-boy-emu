@@ -1,0 +1,1 @@
+# lint-gba-emu
