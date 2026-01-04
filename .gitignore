@@ -1,41 +1,39 @@
-# Prerequisites
-*.d
+# Build output / executables
+*.out
+*.exe
+a.out
+cpu
 
-# Compiled Object files
-*.slo
-*.lo
+# Object files
 *.o
 *.obj
 
-# Precompiled Headers
+# Temporary files
+input.txt
+output.txt
+
+# Editor junk
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+# Optional: other compiled stuff from libraries (from HEAD)
+*.slo
+*.lo
 *.gch
 *.pch
-
-# Linker files
 *.ilk
-
-# Debugger Files
 *.pdb
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
 *.mod
 *.smod
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
 *.lib
-
-# Executables
-*.exe
-*.out
 *.app
-
-# debug information files
 *.dwo
