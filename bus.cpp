@@ -79,3 +79,58 @@ uint8_t bus::read8(uint32_t address)
     }
 }
 
+void bus::write8(uint32_t address, uint8_t data)
+{
+    if(address<=0x3FFF && address>=0x0000)
+    {
+        rom_bank_00_[address]=data;
+    }
+    else if(address<=0x7FFF && address>=0x4000)
+    {
+        rom_bank_01_nn_[address-0x4000]=data;
+    }
+    else if(address<=0x9FFF && address>=0x8000)
+    {
+        vram_[address-0x8000]=data;
+    }
+    else if(address<=0xBFFF && address>=0xA000)
+    {
+        external_ram_[address-0xA000]=data;
+    }
+    else if(address<=0xCFFF && address>=0xC000)
+    {
+        work_ram_1_[address-0xC000]=data;
+    }
+    else if(address<=0xDFFF && address>=0xD000)
+    {
+        work_ram_2_cgb_switchable_[address-0xD000]=data;
+    }
+    else if(address<=0xFDFF && address>=0xE000)
+    {
+        echo_ram_[address-0xE000]=data;
+    }
+    else if(address<=0xFE9F && address>=0xFE00)
+    {
+        object_attribute_memory_[address-0xFE00]=data;
+    }
+    else if(address<=0xFEFF && address>=0xFEA0)
+    {
+        not_usable_[address-0xFEA0]=data;
+    }
+    else if(address<=0xFF7F && address>=0xFF00)
+    {
+        io_registers_[address-0xFF00]=data;
+    }
+    else if(address<=0xFFFE && address>=0xFF80)
+    {
+        high_ram_[address-0xFF80]=data;
+    }
+    else if(address==0xFFFF)
+    {
+        interrupt_enable_register_= data;
+    }
+    else
+    {
+        std::cout<<"invalid address!";
+    }    
+}
