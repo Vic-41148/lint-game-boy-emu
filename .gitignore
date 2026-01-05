@@ -10,7 +10,9 @@ cpu
 
 # Temporary files
 input.txt
+main.cpp
 output.txt
+temp.txt
 
 # Editor junk
 .vscode/

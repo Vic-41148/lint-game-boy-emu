@@ -26,8 +26,8 @@ public:
     bus();
 
     //reader
-    uint8_t read8(uint32_t address);
+    uint8_t read8_(uint32_t address);
 
     //writer
-    void write8(uint32_t address, uint8_t data);
+    void write8_(uint32_t address, uint8_t data);
 };

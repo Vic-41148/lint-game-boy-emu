@@ -22,7 +22,7 @@ bus::bus()
 }
 
 //reader
-uint8_t bus::read8(uint32_t address)
+uint8_t bus::read8_(uint32_t address)
 {
     if(address<=0x3FFF && address>=0x0000)
     {
@@ -74,12 +74,12 @@ uint8_t bus::read8(uint32_t address)
     }
     else
     {
-        std::cout<<"invalid address!";
+        std::cerr<<"invalid address!";
         return 0xFF;    //return all 1 on 8bit data line
     }
 }
 
-void bus::write8(uint32_t address, uint8_t data)
+void bus::write8_(uint32_t address, uint8_t data)
 {
     if(address<=0x3FFF && address>=0x0000)
     {
@@ -131,6 +131,6 @@ void bus::write8(uint32_t address, uint8_t data)
     }
     else
     {
-        std::cout<<"invalid address!";
+        std::cerr<<"invalid address!";
     }    
 }
