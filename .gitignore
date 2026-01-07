@@ -13,6 +13,7 @@ input.txt
 main.cpp
 output.txt
 temp.txt
+main
 
 # Editor junk
 .vscode/
